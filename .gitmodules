@@ -1,0 +1,3 @@
+[submodule "HydrateMate"]
+	path = HydrateMate
+	url = https://github.com/p3nj/HydrateMate
