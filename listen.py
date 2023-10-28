@@ -6,7 +6,7 @@ import serial
 #relay the command from Pi to Teensy
 #Connect Pi with Teensy over BT first
 print("Setting up bluetooth serial conncetion on /dev/rfcomm0 on port 9600")
-ser = serial.Serial("/dev/rfcomm0", 59600)
+ser = serial.Serial("/dev/rfcomm0", 9600)
 
 def on_connect(client, userdata, flags, rc): # func for makinf connection
     print(f"Connected to MQTT Server {ADD} at port {PORT}")
@@ -28,7 +28,7 @@ def on_message(client, userdata, msg): #Func for Sending msg
     ser.write(msg.payload)
 
 ADD = "3.25.58.119"
-PORT = 1883
+PORT = 8883
 
 client = mqtt.Client()
 client.on_connect = on_connect
